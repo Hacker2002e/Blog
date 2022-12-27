@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag Title</title>
+    <link href="~/starter/assets/css/style-liberty.css" rel="stylesheet" />
+    <link href="~/Style.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class=" main-cont">
+        @Html.Partial("_Header")
+        <main style="margin-top: 72px;">@RenderBody()</main>
+        @Html.Partial("_Footer")
+
+    </div>
+</body>
+</html>

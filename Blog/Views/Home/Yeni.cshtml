@@ -1,0 +1,19 @@
+﻿@model Blog.Models.EntityFramework.Blog
+@*@{
+        ViewBag.Title = "Yeni";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+
+<link href="~/Style.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    @using (Html.BeginForm("Yeni", "Home", FormMethod.Post))
+    {
+        <div class="form-group text-xl-center" style="margin: 20px 0;">
+            @Html.LabelFor(m => m.Task, new { @class = "text-primary ", @style = "font-weight: 500; font-size: 22px" })
+            @Html.TextBoxFor(m => m.Task, new { @class = "form-control ttx " })
+        </div>
+        @Html.HiddenFor(m => m.ID)
+        <button type="submit" class="btn btn-danger">Save</button>
+    }
+</div>

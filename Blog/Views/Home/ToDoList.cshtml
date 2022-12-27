@@ -1,0 +1,39 @@
+﻿@using Blog.Models.EntityFramework
+@model List<Blog>
+@*@{
+        ViewBag.Title = "Todolist";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+<link href="~/Style.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container" id="Blog">
+
+    <a class="btn btn-primary" style="margin: 20px 0;" href="/Home/Yeni">New Task</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>      </th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Task</td>
+                    <td> <a class="btn btn-primary" btn href="/Home/Update/@item.ID">Update</a></td>
+                    <td> <a class="btn btn-warning" href="/Home/Delete/@item.ID">Delete</a></td>
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+
+</div>
